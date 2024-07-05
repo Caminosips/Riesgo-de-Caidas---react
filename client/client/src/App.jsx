@@ -36,7 +36,7 @@ function App() {
 
   <div className="form-groups">
     <label>
-      <b>1. Nombre y apellidos</b>
+       <h2>1. Nombre y apellidos</h2>
       </label>
       <input onChange={(event)=>{setNombre(event.target.value)}} type="text" name="name" placeholder="Nombre y apellidos" 
       />
@@ -47,7 +47,7 @@ function App() {
 
   <div className="form-groups">
     <label>
-      <b>2. Numero de documento de identificacion</b>
+      <h3>2. Número de documento de identificacion</h3>
     </label>
     <input
       type="number"
@@ -61,7 +61,7 @@ function App() {
 
   <div className="form-groups" >
     <p>
-      <b> 3. Sexo </b>
+      3. Sexo 
     </p>
     <label>
       <input type="radio" id="Femenino" name="sexo" value="1" />
@@ -80,7 +80,7 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>4. ¿A presentado Caidas en los ultimos 3 meses?</b>
+      4. ¿A presentado Caídas en los ultimos 3 meses?
     </p>
     <label>
       <input type="radio" id="No" name="opciones" value="1" />
@@ -95,7 +95,7 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>5. ¿Que medicamentos toma?</b>
+      5. ¿Qué medicamentos toma?
     </p>
     <label>
       <input type="checkbox" name="medicamentos" id="Ninguno" />
@@ -130,7 +130,7 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>6. ¿Tiene algun deficit temporal?</b>
+      6. ¿Tiene algún déficit temporal?
     </p>
     <label>
       <input type="checkbox" name="deficit" id="ninguno" />
@@ -153,7 +153,7 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>7. ¿Cual es su estado mental?</b>
+      7. ¿Cuál es su estado mental?
     </p>
     <label>
       <input type="radio" name="estado" />
@@ -168,22 +168,23 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>8. Deambulacion</b>
+      8. Deambulación
     </p>
     <label>
       <input type="radio" name="deambulacion" />
       <b>Normal</b>
     </label>
     <label>
-      <input type="radio" name="deambulacion" defaultValue={2} />
+      <input type="radio" name="deambulacion"  />
       <b>Segura con ayuda</b>
     </label>
     <label>
-      <input type="radio" name="deambulacion" defaultValue={3} />
-      <b>Insegura con ayuda / Sin ayuda</b>
+      <input type="radio" name="deambulacion"  />
+      <b> Insegura con ayuda/ Sin ayuda</b>
+      
     </label>
     <label>
-      <input type="radio" name="deambulacion" defaultValue={4} />
+      <input type="radio" name="deambulacion"  />
       <b>Imposible</b>
     </label>
   </div>
@@ -191,20 +192,20 @@ function App() {
 
   <div className="form-groups">
     <p>
-      <b>9. Edad</b>
+      9. Edad
     </p>
     <label>
-      <input type="radio" name="edad" defaultValue={1} />
+      <input type="radio" name="edad"  />
       <b>Menor de 70</b>
     </label>
     <label>
-      <input type="radio" name="edad" defaultValue={2} />
+      <input type="radio" name="edad"  />
       <b>Mayor de 70</b>
     </label>
-  </div>
+  
     <br />
     <button onClick={mostrarDatos}>Listo</button>
-  
+    </div>
 </div>
   </>
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
-
+import Axios from 'axios'
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,15 +16,27 @@ function App() {
   const [deambulacion, setDeambulacion] = useState('');
   const [edad, setEdad] = useState('');
 
-  const mostrarDatos =() => {
-    alert(nombre);
-  }
+  const add =() => {
+    Axios.post("https://localhost:3306/create",{
+      nombre:nombre,
+      num_id:num_id,
+      sexo:sexo,
+      caidas:caidas,
+      medicamentos:medicamentos,
+      deficit:deficit,
+      estadomental:estadomental,
+      deambulacion:deambulacion,
+      edad:edad
+    }).then(()=>{
+      alert("Usuario registrado")
 
+    });
+      
+    
+  }
 
   return (
 
-  
-  
     <> 
     
 <div className='App'>
@@ -36,7 +49,7 @@ function App() {
 
   <div className="form-groups">
     <label>
-       <h2>1. Nombre y apellidos</h2>
+      <h2>1. Nombre y apellidos</h2>
       </label>
       <input onChange={(event)=>{setNombre(event.target.value)}} type="text" name="name" placeholder="Nombre y apellidos" 
       />
@@ -204,7 +217,7 @@ function App() {
     </label>
   
     <br />
-    <button onClick={mostrarDatos}>Listo</button>
+    <button onClick={add}>Listo</button>
     </div>
 </div>
   </>

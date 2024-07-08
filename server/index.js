@@ -4,20 +4,28 @@ const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
 
-
 app.use(cors());
-app.use(express.json());
+
 
 
 const db = mysql.createConnection({
     host:"localhost",
-    user:"root@localhost",
-    password:"your_password ",
+    user:"root",
+    password:"",
     database:"riesgo_caidas"
 })
 
 
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+
+
+
 app.post("/create",(req,res)=>{
+    const datos = req.body;
+    console.log(datos)
+});
     const nombre = req.body.nombre;
     const num_id = req.body.num_id;
     const sexo = req.body.sexo;
@@ -26,7 +34,7 @@ app.post("/create",(req,res)=>{
     const deficit = req.body.deficit;
     const estado = req.body.estado;
     const deambulacion = req.body.deambulacion;
-    const edad = req.body.edad;
+    const edad = req.body.edad
 
 
     db.query('INSERT INTO encuesta(nombre,num_id,sexo,caidas,medicamentos,deficit,estado,deambulacion,edad) VALUES(?,?,?,?,?,?,?,?,?)',
@@ -41,10 +49,11 @@ app.post("/create",(req,res)=>{
             }
         }
     );
+
+
+
+app.listen(3001,function(){
+    console.log("Corriendo en el puerto 3001 http://localhost:3001")
+
 });
 
-
-app.listen(3307,()=>{
-    console.log("Corriendo en el puerto 3307")
-
-})
